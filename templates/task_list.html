@@ -42,7 +42,7 @@
                                 {% endif %}
                             </td>
                         {% endif %}
-                        <td class="center">
+                        <td class="action">
                             {% if task.status != 'Done' %}
                                 <a class="btn btn-secondary" href="/completetask?id={{loop.index0}}">Mark as done</a>
                             {% endif %}

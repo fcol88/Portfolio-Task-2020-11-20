@@ -11,6 +11,7 @@ regularUser = User("Regular", "User", 1234)
 adminUser = Admin("Admin", "User", 4246)
 
 @app.route("/tasklist")
+@app.route("/")
 def task_list():
 
     showAll = False

@@ -11,6 +11,10 @@ h2 {
     margin: 0.7em 0em;
 }
 
+h3 {
+    margin: 1em 0em;
+}
+
 table, th, td {
     text-align: left;
     border: 1px solid gray;
@@ -75,6 +79,14 @@ textarea {
     width: 5em;
 }
 
-.center {
+.action {
     text-align:center;
+    width: 15%;
+}
+
+.error-pane {
+    padding: 10px;
+    width: 330px;
+    margin: 5px 0px;
+    border: 2px solid red;
 }
