@@ -12,16 +12,28 @@
             <th>Status</th>
             <th>Assignee</th>
             <th>Created</th>
+            {% if showAll == True %}
+                <th>Completed</th>
+            {% endif %}
+            <th></th>
         </tr>
-        {% for task, i in tasks.__taskList %}
-            <tr>
-                <td>{{ task.description }}</td>
-                <td>{{ task.status }}</td>
-                <td>{{ task.user.firstName + ' ' + task.user.lastName }}</td>
-                <td>{{ task.created.timestamp|datetime }}</td>
-            </tr>
+        {% for task in tasks.taskList %}
+            {% if task.status != 'Done' or showAll == True %}
+                <tr>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.status }}</td>
+                    <td>{{ task.user.firstName + ' ' + task.user.lastName }}</td>
+                    <td>{{ task.created.timestamp.strftime('%d/%m/%Y') }}</td>
+                    {% if showAll == True %}
+                        <td>{{ task.completed.timestamp.strftime('%d/%m/%Y') }}</td>
+                    {% endif %}
+                    <td><a href="/completetask?id={{loop.index0}}">Mark as done</a></td>
+                </tr>
+            {% endif %}
         {% endfor %}
 
     </table>
+
+    <a href="/addtask">Add task</a>
 
 {% endblock %}
