@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <h1>Add a task</h1>
+    <h2>Add a task</h2>
 
     {% if feedback is defined %}
     <div class="error-pane">
@@ -21,7 +21,7 @@
         <div class="form-group">
 
             <label for="description">Task Description</label>
-            <textarea id="description" name="description">{{ description }}</textarea>
+            <textarea id="description" name="description" rows="5" cols="50">{{ description }}</textarea>
 
         </div>
 
@@ -39,11 +39,11 @@
         <div class="form-group">
 
             <label for="pin">User PIN</label>
-            <input id="pin" name="pin" type="password"/>
+            <input id="pin" name="pin" class="pin" type="password"/>
 
         </div>
 
-        <button type="submit">Save task</button>
+        <button class="btn" type="submit">Save task</button>
 
     </form>
 
